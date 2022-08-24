@@ -1,6 +1,19 @@
-
 //importing framework
 import UIKit
+
+/*
+Type safety and type inference:
+*/
+
+//declaring variable
+var str = "Hello, playground" //without specifying data type, better practice
+var feedback: String //specifying data type (if value is not assigned to it yet)
+if paymentSuccessful {
+    feedback = "Payment Successful!"
+} else {
+    feedback = "Unsuccessful!"
+}
+
 
 //defining string variable
 var str = "Hello, world!"
