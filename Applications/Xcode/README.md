@@ -1,6 +1,7 @@
 # Xcode
 - Xcode 13
 1. [Connecting Xcode to GitHub](#connecting-xcode-to-github)
+2. [Creating Storyboard on Xcode 13](#creating-storyboard-on-xcode-13)
 
 ## Connecting Xcode to GitHub
 1. On Xcode, go to **Preference -> Accounts**
@@ -25,3 +26,11 @@
     <img src="Media/Screen%20Shot%202022-08-24%20at%2010.04.14%20AM.png" width = "400">
 
     Now, you can push/commit on xcode directly.
+
+## Creating Storyboard on Xcode 13
+1. Click on project in navigator area, create new file
+2. Select storyboard for template
+
+    <img src="Media/Screen%20Shot%202022-08-24%20at%2010.11.01%20AM.png" width = "600">
+
+    
