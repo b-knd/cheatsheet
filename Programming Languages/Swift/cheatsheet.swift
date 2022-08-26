@@ -18,9 +18,113 @@ while val >= 0 {
     val -= 1
 }
 
+
 //FOR-IN
+//--range extraction
+//closed: inclusive
+for index in 1...3 {
+    print("\(index)")
+}
+//half-open: exclusive
+for index in 1..<3 {
+    print("\(index)")
+}
+//--reverse
+for index in (0..<100).reversed() {
+    print("\(index)")
+}
+//--one-sided range
+var nums = [0, 1, 2, 3, 4]
+for i in nums[3...] {
+    print(i)    //print 3 and 4 (go all the way until last element)
+}
 
 
+//SWITCH
+//no break necessary
+for i in (0..<100).reversed() {
+    switch i {
+        case 0:
+            print("No more")
+        case 1:
+            print("1 left")
+        case 2...100:   //interval matching
+            print("\(i) left")
+        default:
+            print("Error")
+    }
+}
+
+
+//FUNCTIONS
+//--definition
+func serve(drink:String, curtomer: String) -> String {
+    return("\(customer), your \(drink) is served")
+}
+//--calling
+print(serve(drink:"beer", customer:"Billy"))
+//--external parameter
+func serve(drink: String, to customer: String) -> String {
+    return ("\(customer), your \(drink) is served")
+}
+print(serve(drink:"beer", to:"Billy"))
+//--calling without external parameter
+func serve(_ drink: String, to customer: String) -> String {
+    return ("\(customer), your \(drink) is served")
+}
+print(serve("beer", to: "Billy"))
+//--default parameter
+funct serve(_ drink: String = "Beer", to customer: String = "Billy") -> String {
+    return ("\(customer), your \(drink) is served")
+}
+print(serve())
+
+
+//OPTIONALS
+//optional contains either a thing of certain type or nil (eg. A strign optional contains either nil or String)
+//--declaration
+var main: String?
+//--unwrapping optionals (force unwrapping assume optional is not nil, optional binding use if or guard statements to check
+//force unwrapping
+print("Your \(main!.uppercased()) is served!") //adding ! so that main is unwrapped with the expectation that it is an appropriate data types
+//optional binding
+if let mainVal = main { 
+    print("Your \(mainVal.uppercased()) is served!")    
+}
+var drink:String? = "Malbec"
+if let main = main, let drink = drink { //multiple optional binding
+    print("Your \(main.uppercased()) pairs well with \(drink.uppercased())")
+}
+//guard statement
+func serve(drink: String? = nil) -> String {
+    guard let drink = drink, drink != "Kool-Aid" else {
+        return("No drink for you")
+    }
+    return ("Your \(drink) is served")
+}
+//ternary conditional operator
+var default = "Stirred"
+var specialMix:String?
+specialMix = "Shaken"
+let prepareMartini = specialMix != nil ? specialMix!: defaultMix    //condition ? if true do this: if false do this
+//nil coalescing operator
+let prepareMartini = specialMix ?? defaultMix   //optional if not nill ?? alternative value
+//implicitly unwrapped optional: if you are sure the object won't be nil and have been instantiated before
+var main: String!
+main = "Steak"
+print("Your \(main.uppercased()) is served!")
+//--optional chaining (chain together multiple optionals)
+var reserved = [[true,  true,  false],
+                [false, false, false],
+                [true,  true,  false]
+]
+if let firstTable = reserved.firt?.first {  //replacing 'if let firstRow = reserved.first, let firstTable = firstRow.first'
+    let reservedText = firstTable ? "reserved" : "vacant"
+    print("Best table in the house is \(reservedText)!"
+}
+
+
+//TUPLES
 
 
 //____________________________________________________________________________________________________________________________________________//
@@ -55,6 +159,7 @@ let firstTwo = array[0...1]
 let p = ["It's a great day!"]
 array = p + array
 
+
 //SETS
 //--declaration
 var sets:Set<String>
@@ -70,6 +175,7 @@ for i in sets {
 //--combining sets
 var anotherSets:Set = ["D", "E", "F", "G"]
 var unionOfTwo = sets.union(anotherSets) //some other combination includes: intersection, symmetric difference and subtraction
+
 
 //DICTIONARIES
 //--declaration
