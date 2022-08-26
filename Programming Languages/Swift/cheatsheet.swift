@@ -2,6 +2,16 @@
 import UIKit
 
 /*
+3. CONTROL FLOW
+*/
+
+//IF, ELSE, WHILE
+
+
+
+//____________________________________________________________________________________________________________________________________________//
+
+/*
 2. COLLECTIONS
 */
 
@@ -48,6 +58,24 @@ var anotherSets:Set = ["D", "E", "F", "G"]
 var unionOfTwo = sets.union(anotherSets) //some other combination includes: intersection, symmetric difference and subtraction
 
 //DICTIONARIES
+//--declaration
+var dict: [String:String] = [:]
+//--initialisation
+dict = ["a": "apple",
+        "b": "balloon",
+        "c": "cellphone"]
+//--extracting and removing element
+let a = dict["a"]
+dict["a"] = nil
+//--checking
+dict.isEmpty
+//--iteration
+for (alp, words) in dict {
+    print("\(a) is \(words)")
+}
+//--extracting keys and values
+let keys = Array(dict.keys)
+let vals = Array(dit.values)
 
 //____________________________________________________________________________________________________________________________________________//
 
