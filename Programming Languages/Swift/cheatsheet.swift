@@ -8,6 +8,18 @@ import UIKit
 //IF, ELSE, WHILE
 var val = 99
 while val >= 0 {
+    if (val == 0) {
+        print("Empty")
+    } else if val == 1 {
+        print("1 left")
+    } else {
+        print("\(val) left")
+    }
+    val -= 1
+}
+
+//FOR-IN
+
 
 
 
