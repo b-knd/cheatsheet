@@ -6,6 +6,8 @@ import UIKit
 */
 
 //IF, ELSE, WHILE
+var val = 99
+while val >= 0 {
 
 
 
@@ -15,7 +17,7 @@ import UIKit
 2. COLLECTIONS
 */
 
-//ARRAYS (storing same data type in ordered list
+//ARRAYS 
 //--declaring
 var array:[String] = []
 //--instantiating
