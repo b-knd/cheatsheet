@@ -1,5 +1,5 @@
 # Cheatsheet
-Cheatsheet and personal notes
+**Cheatsheet and personal notes.**
 
 Programming Languages:
 - [Ballerina](Programming%20Languages/Ballerina/cheatsheet.bal)
