@@ -125,8 +125,39 @@ if let firstTable = reserved.firt?.first {  //replacing 'if let firstRow = reser
 
 
 //TUPLES
-
-
+//finite group of element
+//--declaration and initialisation
+var meal1: (String,Double)
+var meal2 = ("Turkey chili soup", 2.99)
+var meal3: (name: String, price: Double)
+var meal4 = (name: "Bread", price: 2)
+meal4.price = 3
+//--extracting element
+print("\(meal2.0) costs \(meal2.1)")
+//--tuple as return value
+func chefSpecial() -> (name: String, price: Double) {
+    return (name:"Crab bisque", price: 3.99)
+}
+var meal = chefSpecial()
+//--type alias (define an alias for a type)
+typealias Meal = (name: String, price: Double)
+func chefSpecial() -> Meal {
+}
+//--initialising variable with typle
+var soup = (name: "Jambalaya", price: 2.99)
+var (soupName, soupPrice) = soup
+var (soupName, soupPrice) = ("Tomato soup", 1.99)
+//--swapping variables
+var mealLeft = "Fish and chips"
+var mealRight = "Burger and fries"
+(mealLeft, mealRight) = (mealRight, mealLeft)
+  
+    
+//HIGHER-ORDER FUNCTIONS
+//function that can receive function as parameter
+//--map
+var
+    
 //____________________________________________________________________________________________________________________________________________//
 
 /*
