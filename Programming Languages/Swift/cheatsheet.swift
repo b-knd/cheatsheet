@@ -1,6 +1,8 @@
 //importing framework
 import UIKit
 
+//____________________________________________________________________________________________________________________________________________
+
 /*
 3. CONTROL FLOW
 */
@@ -156,9 +158,28 @@ var mealRight = "Burger and fries"
 //HIGHER-ORDER FUNCTIONS
 //function that can receive function as parameter
 //--map
-var
+//instead of doing this
+var prices = [3, 1.99, 2, 1.99, 1.70]
+var updatedPrices: [Double] = []
+for price in prices {
+    updatedPrices.append(price * 1.1)
+}
+//we create a function and pass to map (map apply action on every element of a collection and return a new collection)
+func updatePrice(price: Double -> Double {
+    return price * 1.1
+}
+var updatedPrices = prices.map(updatePrice)
+//--closures (function without name)
+var updatedPrices = prices.map { {$0 * 1.1} }
+//--filter
+var filteredPrices = prices.filter { {$0 >= 5} }
+//--reduce
+var totalPrice = prices.reduce(0, {$0 + $1})
+//--sorted
+var sortedPrices = prices.sorted(by: {$0 > $1}} //descending
+
     
-//____________________________________________________________________________________________________________________________________________//
+//____________________________________________________________________________________________________________________________________________
 
 /*
 2. COLLECTIONS
@@ -228,7 +249,7 @@ for (alp, words) in dict {
 let keys = Array(dict.keys)
 let vals = Array(dit.values)
 
-//____________________________________________________________________________________________________________________________________________//
+//____________________________________________________________________________________________________________________________________________
 
 /*
 1. TYPE SAFETY AND TYPE INFERENCE:
