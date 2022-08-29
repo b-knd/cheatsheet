@@ -1,6 +1,20 @@
 //importing framework
 import UIKit
 
+/*
+4. OBJECT
+*/
+
+//CLASSES
+//--definition
+class Distance {
+    //properties
+    //type properties
+    static let kmPerMile = 1.60934
+    //instance properties
+    var miles:Doubleidmi
+}
+
 //____________________________________________________________________________________________________________________________________________
 
 /*
