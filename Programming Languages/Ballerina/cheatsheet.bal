@@ -1,3 +1,117 @@
+
+//23. FUNCTIONAL PROGRAMMING
+//function is also values and work as closure
+var isOdd = function(int n) returns boolean {
+  return n % 2 != 0;
+}
+
+type IntFilter function (int n) returns boolean;
+
+function isEven(int n) returns boolean {
+  return n % 2 == 0;
+}
+
+IntFilter f = isEven;
+
+int[] nums = [1,2,3];
+int[] evenNums = nums.filter(f); //return even number
+
+//--asynchronous function call: process on separate logical thread/strand
+future<int> f1 = start foo();
+future<int> f2 = start foo();
+//waiting for result
+int x1 = check wait f1;
+int x2 = check wait f2;
+//alternative
+record {| int|error f1; int|error f2; |} f = wait {f1, f2};
+int x1 = check f.f1;
+int x2 = check f.f2;
+
+//______________________________________________________________________________________________
+
+
+//22. MATCH STATEMENT
+//similar to switch but more flexible coming to the data types
+const KEY = "xyzzy";
+
+function mtest(any v) returns string {
+
+  match v {
+    17 => { return "number"; }
+    true => { return "boolean"; }
+    "str" => { return "string"; }
+    KEY => { return "constant"; }
+    0|1 => { return "or"; }
+    _ => { return "any"; }
+  }
+}
+
+//______________________________________________________________________________________________
+
+//21. ENUMERATIONS
+enum Color {
+  RED, GREEN, BLUE  //each enum is their string value "RED", "GREEN" and "BLUE" correspondingly
+}
+//or define explicitly
+enum Language {
+  ENG = "English",
+  TL = "Tamil",
+  SI = "Sinhala"
+}
+
+//______________________________________________________________________________________________
+
+//20. CONST and FINAL
+//--const: immutable singleton
+const MAX_VALUE = 1000;
+//--final: value that cannot be reassigned once initialised
+final string msg = loadMessage();
+
+//______________________________________________________________________________________________
+
+//19. IDENTITY
+//identity is determined by memory location, check using === and !==
+MyClass obj1 = new MyClass();
+MyClass obj2 = new MyClass();
+
+//true
+boolean b1 = (obj1 === obj1);
+//false
+boolean b2 = (obj1 === obj2);
+
+//true
+boolean b3 = ([1,2,3] == [1,2,3]) //deep comparison
+//false
+boolean b4 = ([1,2,3] === [1,2,3])
+
+//______________________________________________________________________________________________
+
+//18. OBJECT and CLASSES
+//--creation of new object
+function demoMyClass() {
+  m:MyClass x = new m:MyClass(1234);
+  x.foo();
+  int n = x.n;
+}
+//--definition of class
+class MyClass {
+  private int n; //class variable
+  
+  public function init(int n = 0) { //constructor (return value if present, must return either error or nil: error?)
+    self.n = n;
+  }
+  
+  public function inc() {
+    self.n += 1;
+  }
+  
+  public function get() returns int {
+    return self.n;
+  }
+}
+
+//______________________________________________________________________________________________
+
 //17. RETURN VALUE
 //void function
 func();
@@ -202,6 +316,14 @@ int n = 0xFFFF;
 
 //4. SYNTAX
 //comments
+//documentation
+# Add two integers.
+# + x - an integer
+# + y - another integer
+# + return - the sum of 'x' and 'y'
+public function add(int x, int y) returns int {
+  return x + y;
+}
 //to use predefined keywords as variable names, add a single quote before
 string 'string = "xyz";
 
