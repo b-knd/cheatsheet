@@ -1,4 +1,4 @@
-# Cheatsheet
+# Notes and Cheatsheet
 **Cheatsheet and personal notes.**
 
 Programming Languages:
